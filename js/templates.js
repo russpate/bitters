@@ -1,0 +1,25 @@
+module.exports = {
+  newBitterForm: [
+      '<form class="create-bitter-form">',
+        '<input type="text" class="create-bitter-input-name">',
+        '<input type="text" class="create-bitter-input-post" maxlength="144">',
+        '<button class="create-bitter-submit">submit</button>',
+      '</form>'
+  ].join(""),
+  bitterPost: [
+      '<div class="bitter-text-wrap">',
+        '<h3 class="bitter-text"></h3>',
+      '</div>',
+      '<div class="bitter-options">',
+        '<button class="bitter-options-delete">delete</button>',
+        '<button class="bitter-options-edit">edit</button>',
+      '</div>'
+  ].join(""),
+  bitterEdit: [
+    '<form class="edit-bitter-form">',
+      '<input type="text" class="edit-bitter-input-name">',
+      '<input type="text" class="edit-bitter-input-post" maxlength="144">',
+      '<button class="edit-bitter-save">save</button>',
+    '</form>'
+  ].join("")
+}
