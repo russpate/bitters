@@ -1,15 +1,18 @@
 var Backbone = require('backbone');
 var _ = require('underscore');
 var tmpl= require('./templates');
+var BitModel = require('./model');
 
 module.exports = Backbone.View.extend({
-  className:'new-bitter-form',
+  el:'.new-bitter-form',
   template: _.template(tmpl.newBitterForm),
   initialize: function(){
-    this.$el.append(this.render());
+    console.log("this.$el", this.$el)
+    this.render();
   },
   render: function(){
-    var markup = this.template(this.model.toJSON());
+    var markup = this.template();
+    console.log("markup", markup)
     this.$el.html(markup);
     return this;
   },
@@ -18,11 +21,17 @@ module.exports = Backbone.View.extend({
     'click .create-bitter-submit':'bitterSubmit'
   },
   bitterSubmit: function(event){
-    this.model.save({
+    event.preventDefault();
+    var newBitter = {
     name: this.$el.find('.create-bitter-input-name').val(),
-    post: this.$el.find('.create-bitter-input-post"]').val()
-  });
+    post: this.$el.find('.create-bitter-input-post').val()
+  };
+    console.log("newBitter", newBitter);
+    console.log("bitModel", BitModel);
+  var newBitter = new BitModel(newBitter);
   this.$el.find('input').val('');
-  this.collection.add(this.model);
+
+  newBitter.save();
+
 }
 });

@@ -3,7 +3,6 @@ var BitterCollection = require('./bitterCollection')
 var BitterCollectionView = require('./bitterCollectionView')
 var BitterFormView = require('./bitterFormView')
 
-
 module.exports = Backbone.Router.extend({
   subview:null,
   routes:{
@@ -13,10 +12,13 @@ module.exports = Backbone.Router.extend({
   home:function(){
     var that = this; // constructor context
     var bitterCol = new BitterCollection();
+    var bitFormView = new BitterFormView();
     bitterCol.fetch().then(function (data) {
-        console.log(bitterCol.models.length);
+        console.log(bitterCol.models.length, "data", data);
         // data is ready
-        that.renderSubview(new BitterCollectionView({collection: bitterCol}));
+        var collection = new BitterCollection(data);
+        console.log("collection", collection)
+        that.renderSubview(new BitterCollectionView({collection: collection}));
       });
     },
     renderSubview: function (subview) {
