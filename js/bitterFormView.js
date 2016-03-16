@@ -4,10 +4,13 @@ var tmpl= require('./templates');
 var BitModel = require('./model');
 
 module.exports = Backbone.View.extend({
+  collection:null,
   el:'.new-bitter-form',
   template: _.template(tmpl.newBitterForm),
   initialize: function(){
     console.log("this.$el", this.$el)
+    this.listenTo(this.model, 'change', this.addAll);
+    this.listenTo(this.model, 'update', this.addAll);
     this.render();
   },
   render: function(){
@@ -26,12 +29,8 @@ module.exports = Backbone.View.extend({
     name: this.$el.find('.create-bitter-input-name').val(),
     post: this.$el.find('.create-bitter-input-post').val()
   };
-    console.log("newBitter", newBitter);
-    console.log("bitModel", BitModel);
   var newBitter = new BitModel(newBitter);
   this.$el.find('input').val('');
-
   newBitter.save();
-
 }
 });

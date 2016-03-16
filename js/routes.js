@@ -11,8 +11,9 @@ module.exports = Backbone.Router.extend({
   },
   home:function(){
     var that = this; // constructor context
-    var bitterCol = new BitterCollection();
     var bitFormView = new BitterFormView();
+    var bitterCol = new BitterCollection();
+    // var addFormContent = new BitterFormView({collection:bitterCol});
     bitterCol.fetch().then(function (data) {
         console.log(bitterCol.models.length, "data", data);
         // data is ready
