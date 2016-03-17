@@ -9,6 +9,9 @@ module.exports = Backbone.View.extend({
   template: _.template(tmpl.newBitterForm),
   initialize: function(){
     console.log("this.$el", this.$el)
+    if(!this.model){
+      this.model = new BitModel({});
+    };
     this.listenTo(this.model, 'change', this.addAll);
     this.listenTo(this.model, 'update', this.addAll);
     this.render();
