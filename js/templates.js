@@ -1,11 +1,15 @@
 module.exports = {
   newBitterForm: [
-    '<h1>Hell<strike>o</strike> World</h1>',
-      '<form class="create-bitter-form">',
-        '<input type="text" class="create-bitter-input-name">',
-        '<input type="text" class="create-bitter-input-post" maxlength="144">',
-        '<button class="create-bitter-submit">submit</button>',
-      '</form>'
+    '<div class="create-bitter-form-wrap">',
+      '<h1>Hell<strike>o</strike> World</h1>',
+        '<form class="create-bitter-form">',
+          '<input type="text" class="create-bitter-input-name" placeholder="username">',
+          '<input type="text" class="create-bitter-input-post"placeholder="write your bitter message" maxlength="144">',
+          '<div class="create-bitter-submit-wrap">',
+            '<button class="create-bitter-submit">submit</button>',
+          '</div>',
+        '</form>',
+      '</div>'
   ].join(""),
   bitterPost: [
       '<div class="bitter-text-wrap">',

@@ -8,7 +8,6 @@ module.exports = Backbone.View.extend({
   initialize: function(){
     this.addAll();
     this.listenTo(this.collection, 'update', this.addAll);
-    this.listenTo(this.collection, 'change', this.addAll);
   },
   addOne: function(el){
     var modelView = new BitterModelView({model: el})
