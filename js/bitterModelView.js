@@ -8,7 +8,7 @@ module.exports = Backbone.View.extend({
   template: _.template(tmpl.bitterPost),
   editTemplate: _.template(tmpl.bitterEdit),
   initialize: function(){
-    this.listenTo(this.collection, 'change', this.addAll);
+    this.listenTo(this.model, 'change', this.render);
   },
   render: function(){
     var markup = this.template(this.model.toJSON());
@@ -32,8 +32,8 @@ module.exports = Backbone.View.extend({
   bitterEdit: function(event){
     event.preventDefault();
     this.model.set({
-      name: this.$el.find('edit-bitter-input-name').val(),
-      post: this.$el.find('edit-bitter-input-post').val()
+      name: this.$el.find('.edit-bitter-input-name').val(),
+      post: this.$el.find('.edit-bitter-input-post').val()
     });
     this.model.save();
   }
