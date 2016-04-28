@@ -81,7 +81,7 @@ h1 {
   color: #0836D6; }
 
 .new-bitter-form {
-  width: 36%;
+  width: 100%;
   display: inline-block;
   vertical-align: top;
   padding: 0 5%; }
@@ -122,7 +122,9 @@ button.create-bitter-submit {
 
 @media only screen and (max-width: 54.9375em) {
   .create-bitter-form-wrap {
-    position: relative; } }
+    position: relative; }
+  .create-bitter-form {
+    padding: 0; } }
 
 @media only screen and (max-width: 47.875em) {
   .create-bitter-form-wrap {
