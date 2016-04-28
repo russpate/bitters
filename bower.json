@@ -1,0 +1,20 @@
+{
+  "name": "bitters",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Russell Pate <russ@russpate.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/russpate/bitters",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

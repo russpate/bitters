@@ -1,0 +1,23 @@
+// device size md
+@media only screen and (max-width:54.9375em) {
+  .create-bitter-form-wrap{
+    position:relative;
+    }
+    .create-bitter-form{
+      padding:0;
+    }
+}
+
+// device size sm
+@media only screen and (max-width:47.875em) {
+  .create-bitter-form-wrap{
+    position:relative;
+    }
+}
+
+// device size xs
+@media screen and (max-width: 40em) {
+.create-bitter-form-wrap{
+  position:relative;
+  }
+}

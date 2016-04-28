@@ -12,8 +12,6 @@ body {
   margin: 0 auto; }
 
 .content {
-  width: 63%;
-  display: inline-block;
   padding: 30px 3%;
   border-left: 1px solid #0836D6;
   background: white; }
@@ -121,3 +119,15 @@ button.create-bitter-submit {
   margin: 10px 0;
   border-radius: 3px;
   font-size: 14px; }
+
+@media only screen and (max-width: 54.9375em) {
+  .create-bitter-form-wrap {
+    position: relative; } }
+
+@media only screen and (max-width: 47.875em) {
+  .create-bitter-form-wrap {
+    position: relative; } }
+
+@media screen and (max-width: 40em) {
+  .create-bitter-form-wrap {
+    position: relative; } }
